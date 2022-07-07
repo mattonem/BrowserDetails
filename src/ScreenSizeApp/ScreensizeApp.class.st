@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'text'
 	],
-	#category : #ScreenSizeApp
+	#category : #ScreensizeApp
 }
 
 { #category : #description }
