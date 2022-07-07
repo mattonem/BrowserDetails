@@ -1,0 +1,15 @@
+SmalltalkCISpec {
+  #loading : [
+    SCIMetacelloLoadSpec {
+      #baseline : 'ScreensizeApp',
+      #directory : 'src',
+      #platforms : [ #pharo ]
+    }
+  ],
+  #postLoading : [
+    'scripts/exportApp.st'
+  ],
+  #testing : {
+    #failOnZeroTests : false
+  }
+}
