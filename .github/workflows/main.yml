@@ -45,18 +45,6 @@ jobs:
           path: HTML/ScreensizeApp/ScreensizeApp/
           # Duration after which artifact will expire in days.
           retention-days: 1 
-      - name: Copy files to another repository
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source-directory:  HTML/ScreensizeApp/ScreensizeApp
-          destination-github-username: mattonem
-          destination-repository-name: mattonem.github.io
-          target-branch: main
-          target-directory: ./screensizeApp
-          user-email: mattonem@gmail.com
-          commit-message: 'update screensizeApp'
   deploy:
     environment:
       name: github-pages
