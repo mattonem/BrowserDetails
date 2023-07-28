@@ -1,2 +1,2 @@
-ScreensizeApp appFolder: './HTML/ScreensizeApp/ScreensizeApp/' asFileLocatorOrReference.
+ScreensizeApp appFolder: './build' asFileLocatorOrReference  ensureCreateDirectory.
 ScreensizeApp exportApp
