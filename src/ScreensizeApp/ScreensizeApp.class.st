@@ -46,6 +46,19 @@ ScreensizeApp class >> generateHtmlUsing: html [
 							html heading
 								level: 1;
 								id: 'screensize';
+								with: '' ] ].
+			html div
+				class: 'card text-center';
+				with: [
+					html div
+						class: 'card-header';
+						with: 'Your IP adress is:'.
+					html div
+						class: 'card-body';
+						with: [
+							html heading
+								level: 1;
+								id: 'ipAddress';
 								with: '' ] ] ]
 ]
 
@@ -61,12 +74,30 @@ ScreensizeApp class >> updateHtmlRoot: root [
 { #category : #'initialize-release' }
 ScreensizeApp >> start [
 
+	| client req iptext |
 	super start.
-	text := document getElementById: #screensize. 
-	window addEventListener: #resize block: [ 
+	text := document getElementById: #screensize.
+	window addEventListener: #resize block: [
 		text innerHTML:
 			window innerWidth asString , 'x' , window innerHeight asString ].
 
 	text innerHTML:
-		window innerWidth asString , 'x' , window innerHeight asString
+		window innerWidth asString , 'x' , window innerHeight asString.
+	iptext := document getElementById: #ipAddress.
+	client := PjHttpClient new.
+	client onLoad: [ :aClient |
+		| response |
+		response := aClient currentTarget responseText.
+		'ip=(.*)\n' asRegex
+			matchesIn: response
+			do: [ :ligne | 
+				'(\d+)\.(\d+)\.(\d+)\.(\d+)' asRegex
+			matchesIn: ligne
+			do:[:ip |
+				
+				iptext innerHTML: ip] ] ].
+	req := client
+		       method: 'GET'
+		       url: 'https://www.cloudflare.com/cdn-cgi/trace'.
+	req send: ''
 ]

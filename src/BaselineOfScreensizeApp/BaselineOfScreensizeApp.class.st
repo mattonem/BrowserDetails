@@ -12,6 +12,9 @@ BaselineOfScreensizeApp >> baseline: spec [
 		spec
 			baseline: 'Camping'
 			with: [ spec repository: 'github://mattonem/WildCamping:master' ].
+				spec
+			baseline: 'PjHttpClient'
+			with: [ spec repository: 'github://mattonem/RestClientApp:master' ].
 
 		spec package: #ScreensizeApp ]
 ]
