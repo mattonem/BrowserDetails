@@ -1,11 +1,11 @@
 Class {
-	#name : #BaselineOfScreensizeApp,
+	#name : #BaselineOfBrowserDetailsApp,
 	#superclass : #BaselineOf,
 	#category : #BaselineOfBrowserDetailsApp
 }
 
 { #category : #dependencies }
-BaselineOfScreensizeApp >> baseline: spec [
+BaselineOfBrowserDetailsApp >> baseline: spec [
 
 	<baseline>
 	spec for: #common do: [
