@@ -1,2 +1,2 @@
-ScreensizeApp appFolder: './build' asFileLocatorOrReference  ensureCreateDirectory.
-ScreensizeApp exportApp
+BrowserDetailsApp appFolder: './build' asFileLocatorOrReference  ensureCreateDirectory.
+BrowserDetailsApp exportApp

@@ -1,7 +1,7 @@
 SmalltalkCISpec {
   #loading : [
     SCIMetacelloLoadSpec {
-      #baseline : 'ScreensizeApp',
+      #baseline : 'BrowserDetailsApp',
       #directory : 'src',
       #platforms : [ #pharo ]
     }
