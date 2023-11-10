@@ -16,5 +16,5 @@ BaselineOfScreensizeApp >> baseline: spec [
 			baseline: 'PjHttpClient'
 			with: [ spec repository: 'github://mattonem/RestClientApp:master' ].
 
-		spec package: #ScreensizeApp ]
+		spec package: #BrowserDetailsApp ]
 ]

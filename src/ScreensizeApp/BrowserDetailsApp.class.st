@@ -1,5 +1,5 @@
 Class {
-	#name : #ScreensizeApp,
+	#name : #BrowserDetailsApp,
 	#superclass : #PjFileBasedWebApp,
 	#instVars : [
 		'text'
@@ -8,27 +8,27 @@ Class {
 }
 
 { #category : #description }
-ScreensizeApp class >> appClasses [
+BrowserDetailsApp class >> appClasses [
 	<pharoJsSkip>
 	^super appClasses
 ]
 
 { #category : #description }
-ScreensizeApp class >> bridgeClientClass [
+BrowserDetailsApp class >> bridgeClientClass [
 	<pharoJsSkip>
 	
 	^ PjZnHostedBrowserBridgeClient
 ]
 
 { #category : #description }
-ScreensizeApp class >> exporterClass [
+BrowserDetailsApp class >> exporterClass [
 	<pharoJsSkip>
 	
 	^ PjFileExporterWithIndexHtml
 ]
 
 { #category : #description }
-ScreensizeApp class >> generateHtmlUsing: html [
+BrowserDetailsApp class >> generateHtmlUsing: html [
 
 	<pharoJsSkip>
 	html div
@@ -52,7 +52,7 @@ ScreensizeApp class >> generateHtmlUsing: html [
 				with: [
 					html div
 						class: 'card-header';
-						with: 'Your IP adress is:'.
+						with: 'Your IP address is:'.
 					html div
 						class: 'card-body';
 						with: [
@@ -63,7 +63,7 @@ ScreensizeApp class >> generateHtmlUsing: html [
 ]
 
 { #category : #description }
-ScreensizeApp class >> updateHtmlRoot: root [
+BrowserDetailsApp class >> updateHtmlRoot: root [
 
 	<pharoJsSkip>
 	root language: 'en'.
@@ -72,7 +72,7 @@ ScreensizeApp class >> updateHtmlRoot: root [
 ]
 
 { #category : #'initialize-release' }
-ScreensizeApp >> start [
+BrowserDetailsApp >> start [
 
 	| client req iptext |
 	super start.
