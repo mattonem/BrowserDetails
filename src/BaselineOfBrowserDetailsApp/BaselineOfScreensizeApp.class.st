@@ -1,7 +1,7 @@
 Class {
 	#name : #BaselineOfScreensizeApp,
 	#superclass : #BaselineOf,
-	#category : #BaselineOfScreensizeApp
+	#category : #BaselineOfBrowserDetailsApp
 }
 
 { #category : #dependencies }
