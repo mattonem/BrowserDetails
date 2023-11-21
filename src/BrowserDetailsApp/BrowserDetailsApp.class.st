@@ -85,9 +85,7 @@ BrowserDetailsApp >> start [
 		window innerWidth asString , 'x' , window innerHeight asString.
 	iptext := document getElementById: #ipAddress.
 	client := PjHttpClient new.
-	client onLoad: [ :aClient |
-		| response |
-		response := aClient currentTarget responseText.
+	client getUrl: 'https://www.cloudflare.com/cdn-cgi/trace' do: [:response :status | 
 		'ip=(.*)\n' asRegex
 			matchesIn: response
 			do: [ :ligne | 
@@ -95,9 +93,5 @@ BrowserDetailsApp >> start [
 			matchesIn: ligne
 			do:[:ip |
 				
-				iptext innerHTML: ip] ] ].
-	req := client
-		       method: 'GET'
-		       url: 'https://www.cloudflare.com/cdn-cgi/trace'.
-	req send: ''
+				iptext innerHTML: ip] ]  ]. 
 ]
