@@ -74,7 +74,7 @@ BrowserDetailsApp class >> updateHtmlRoot: root [
 { #category : #'initialize-release' }
 BrowserDetailsApp >> start [
 
-	| client req iptext |
+	| client iptext |
 	super start.
 	text := document getElementById: #screensize.
 	window addEventListener: #resize block: [
@@ -85,13 +85,11 @@ BrowserDetailsApp >> start [
 		window innerWidth asString , 'x' , window innerHeight asString.
 	iptext := document getElementById: #ipAddress.
 	client := PjHttpClient new.
-	client getUrl: 'https://www.cloudflare.com/cdn-cgi/trace' do: [:response :status | 
-		'ip=(.*)\n' asRegex
-			matchesIn: response
-			do: [ :ligne | 
+	client
+		getUrl: 'https://www.cloudflare.com/cdn-cgi/trace'
+		do: [ :response :status |
+			'ip=(.*)\n' asRegex matchesIn: response do: [ :ligne |
 				'(\d+)\.(\d+)\.(\d+)\.(\d+)' asRegex
-			matchesIn: ligne
-			do:[:ip |
-				
-				iptext innerHTML: ip] ]  ]. 
+					matchesIn: ligne
+					do: [ :ip | iptext innerHTML: ip ] ] ]
 ]
