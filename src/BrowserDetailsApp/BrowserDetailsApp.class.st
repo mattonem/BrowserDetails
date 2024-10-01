@@ -30,10 +30,10 @@ BrowserDetailsApp class >> generateHtmlUsing: html [
 
 	<pharoJsSkip>
 	html div
-		class: 'container-fluid';
+		class: 'container';
 		with: [
 			html div
-				class: 'card text-center';
+				class: 'card col-10 mx-auto text-center';
 				with: [
 					html div
 						class: 'card-header';
@@ -46,7 +46,7 @@ BrowserDetailsApp class >> generateHtmlUsing: html [
 								id: 'screensize';
 								with: '' ] ].
 			html div
-				class: 'card text-center';
+				class: 'card col-10 mx-auto text-center';
 				with: [
 					html div
 						class: 'card-header';
@@ -58,7 +58,7 @@ BrowserDetailsApp class >> generateHtmlUsing: html [
 								id: 'userAgent';
 								with: '' ] ].
 			html div
-				class: 'card text-center';
+				class: 'card col-10 mx-auto text-center';
 				with: [
 					html div
 						class: 'card-header';
@@ -70,7 +70,7 @@ BrowserDetailsApp class >> generateHtmlUsing: html [
 								id: 'userLanguage';
 								with: '' ] ].
 			html div
-				class: 'card text-center';
+				class: 'card col-10 mx-auto text-center';
 				with: [
 					html div
 						class: 'card-header';
