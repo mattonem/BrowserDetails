@@ -1,1 +1,1 @@
-Package { #name : #BrowserDetailsApp }
+Package { #name : 'BrowserDetailsApp' }
