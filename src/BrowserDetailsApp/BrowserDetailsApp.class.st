@@ -108,17 +108,17 @@ BrowserDetailsApp >> ipv6Regex [
 { #category : 'initialize-release' }
 BrowserDetailsApp >> start [
 
-	| client iptext uaText langText |
+	| client iptext uaText langText screenSizeText |
 	super start.
-	iptext := document getElementById: #screensize.
+	screenSizeText := document getElementById: #screensize.
 	uaText := document getElementById: #userAgent.
 	langText := document getElementById: #userLanguage.
 
 	window addEventListener: #resize block: [
-		iptext innerHTML:
+		screenSizeText innerHTML:
 			window innerWidth asString , 'x' , window innerHeight asString ].
 
-	iptext innerHTML:
+	screenSizeText innerHTML:
 		window innerWidth asString , 'x' , window innerHeight asString.
 
 	uaText innerHTML: navigator userAgent.
